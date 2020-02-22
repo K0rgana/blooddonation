@@ -1,8 +1,9 @@
 const express = require("express")
 const server = express()
 
-//arquivos estaticos na /public
-server.use(express.static('public'))
+//meddlers
+server.use(express.static('public')) //arquivos estaticos na /public
+server.use(express.urlencoded({ extended: true })) //habilitando body form
 
 //template engine
 const nunjucks = require("nunjucks")
@@ -28,8 +29,23 @@ const donors = [
 	},
 ]
 
+
+//routes
 server.get("/", (req,res) => {
 	return res.render("index.html", { donors })
+})
+
+server.post("/", (req,res) => {
+	const name = req.body.name
+	const email = req.body.email
+	const blood = req.body.blood
+
+	donors.push({
+		name: name,
+		blood: blood,
+	})
+
+	return res.redirect("/")
 })
 
 server.listen(3000, () => { 
