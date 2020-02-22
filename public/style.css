@@ -80,7 +80,7 @@ main h2 span{
 	transform: rotate(-45deg); 
 }
 .donor p{
-	margin-top: 24px;
+	margin: 24px 0px 64px 0px;
 	font-size: 14px;
 }
 
