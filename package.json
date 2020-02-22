@@ -1,0 +1,25 @@
+{
+  "name": "maratonaDev20201",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K0rgana/blooddonation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "nunjucks": "^3.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/K0rgana/blooddonation/issues"
+  },
+  "homepage": "https://github.com/K0rgana/blooddonation#readme"
+}
