@@ -13,19 +13,20 @@ nunjucks.configure("./", {
 
 const donors = [ 
 	{
-		name: "morgana pedragon",
+		name: "Morgana Le fay",
 		blood: "A+"
 	},
 	{
-		name: "arthur pedragon",
+		name: "Arthur Pendragon",
 		blood: "B+"
 	},
 	{
-		name: "genevive pedragon",
-		blood: "AB+"
-	},{
-		name: "ginevere pedragon",
+		name: "Merlin Emrys",
 		blood: "O+"
+	},
+	{
+		name: "Guinevere Pendragon",
+		blood: "AB+"
 	},
 ]
 
@@ -39,6 +40,10 @@ server.post("/", (req,res) => {
 	const name = req.body.name
 	const email = req.body.email
 	const blood = req.body.blood
+
+	if (name == "" || email == "" || blood == "") {
+    return res.send("Todos os campos são obrigatórios.")
+  }
 
 	donors.push({
 		name: name,
